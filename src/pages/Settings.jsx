@@ -10,7 +10,7 @@ export default function CSVParser() {
   const [data, setData] = useState([]);
   const [showManualEntry, setShowManualEntry] = useState(false);
 
-  // NEW STATES
+  // Loading + Success states
   const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
 
@@ -26,7 +26,6 @@ export default function CSVParser() {
 
     if (!file) return;
 
-    // START LOADING
     setLoading(true);
     setSuccessMessage("");
 
@@ -45,13 +44,10 @@ export default function CSVParser() {
 
           setTransactions(results.data);
 
-          // STOP LOADING
           setLoading(false);
 
-          // SUCCESS MESSAGE
           setSuccessMessage("Data loaded successfully!");
 
-          // AUTO HIDE MESSAGE
           setTimeout(() => {
             setSuccessMessage("");
           }, 3000);
@@ -91,7 +87,6 @@ export default function CSVParser() {
       JSON.stringify(updatedTransactions)
     );
 
-    // Reset form
     setManualTransaction({
       Date: format(new Date(), "dd/MM/yyyy"),
       Description: "",
@@ -147,7 +142,7 @@ export default function CSVParser() {
   return (
     <div className="max-w-4xl animate-in fade-in duration-500 space-y-6">
 
-      {/* SUCCESS ALERT */}
+      {/* SUCCESS MESSAGE */}
       {successMessage && (
         <div className="alert alert-success shadow-lg">
           <span>{successMessage}</span>
@@ -159,6 +154,7 @@ export default function CSVParser() {
         <div className="flex justify-center">
           <div className="flex items-center gap-3 bg-[#111111] border border-[#1F1F1F] px-6 py-4">
             <span className="loading loading-spinner loading-md text-[#FF6B00]"></span>
+
             <span className="text-gray-300 font-semibold uppercase tracking-wider text-sm">
               Parsing CSV file...
             </span>
@@ -166,13 +162,14 @@ export default function CSVParser() {
         </div>
       )}
 
-      {/* Data Source Section */}
+      {/* DATA SOURCE */}
       <div className="retro-card p-8">
         <h2 className="text-[#FF6B00] text-lg font-black uppercase tracking-widest mb-6">
           Data Source
         </h2>
 
         <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
+
           <div className="form-control w-full max-w-xs">
             <label className="label">
               <span className="label-text text-gray-400 font-bold uppercase tracking-wider text-xs">
@@ -216,7 +213,7 @@ export default function CSVParser() {
         </div>
       </div>
 
-      {/* Manual Entry Section */}
+      {/* MANUAL ENTRY */}
       <div className="retro-card p-8">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-[#FF6B00] text-lg font-black uppercase tracking-widest">
@@ -274,7 +271,7 @@ export default function CSVParser() {
 
               <div>
                 <label className="block text-xs text-gray-400 uppercase tracking-wider font-bold mb-2">
-                  Amount (use - for expenses)
+                  Amount
                 </label>
 
                 <input
@@ -298,10 +295,33 @@ export default function CSVParser() {
               <button type="submit" className="retro-btn">
                 Add Transaction
               </button>
+
+              <button
+                type="button"
+                onClick={clearAllData}
+                className="px-6 py-3 bg-red-500 text-white font-bold uppercase tracking-wider hover:bg-red-600 transition-colors"
+              >
+                Clear All Data
+              </button>
             </div>
           </form>
         )}
       </div>
+
+      {/* RAW DATA */}
+      {data && data.length > 0 && (
+        <div className="retro-card p-8">
+          <h2 className="text-[#FF6B00] text-lg font-black uppercase tracking-widest mb-6">
+            Raw Parsed Data
+          </h2>
+
+          <div className="bg-[#0A0A0A] border border-[#1F1F1F] p-4 max-h-96 overflow-y-auto">
+            <pre className="text-xs text-gray-400 font-mono">
+              {JSON.stringify(data, null, 2)}
+            </pre>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
