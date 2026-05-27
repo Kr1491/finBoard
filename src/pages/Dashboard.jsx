@@ -22,18 +22,7 @@ export default function Dashboard() {
 
   const [loading] = React.useState(false);
 
-  const [successMessage, setSuccessMessage] = React.useState(
-    transactions && transactions.length > 0
-      ? "Data loaded successfully!"
-      : ""
-  );
 
-  React.useEffect(() => {
-    if (successMessage) {
-      const timer = setTimeout(() => setSuccessMessage(""), 3000);
-      return () => clearTimeout(timer);
-    }
-  }, [successMessage]);
 
   const COLORS = [
     "#0088FE",
@@ -108,13 +97,7 @@ export default function Dashboard() {
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
 
-      {successMessage && (
-        <div className="toast toast-top toast-end z-50">
-          <div className="alert alert-success shadow-lg">
-            <span>{successMessage}</span>
-          </div>
-        </div>
-      )}
+
 
       {loading && (
         <div className="flex justify-center items-center py-10">
