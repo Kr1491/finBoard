@@ -216,3 +216,70 @@ To maintain a welcoming and respectful environment for everyone, all contributor
 💙 Thank you for being part of FinBoard and contributing to a better open-source experience!
 
 ___
+
+## 🚀 Tech Stack
+
+<table border="1" cellpadding="12" cellspacing="0">
+  <tr>
+    <td>
+
+<table>
+  <tr>
+    <td align="center" width="220"><b>Frontend</b></td>
+    <td>|</td>
+    <td>
+      <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+      <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white" />
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center"><b>Build Tool</b></td>
+    <td>|</td>
+    <td>
+      <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=FFD62E" />
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center"><b>Styling</b></td>
+    <td>|</td>
+    <td>
+      <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+      <img src="https://img.shields.io/badge/DaisyUI-5A0EF8?style=for-the-badge" />
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center"><b>Charts</b></td>
+    <td>|</td>
+    <td>
+      <img src="https://img.shields.io/badge/Recharts-FF6B6B?style=for-the-badge" />
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center"><b>Icons</b></td>
+    <td>|</td>
+    <td>
+      <img src="https://img.shields.io/badge/Lucide_Icons-000000?style=for-the-badge" />
+      <img src="https://img.shields.io/badge/Custom_SVG-FF9900?style=for-the-badge" />
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center"><b>Backend / Database</b></td>
+    <td>|</td>
+    <td>
+      <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" />
+    </td>
+  </tr>
+
+</table>
+    </td>
+  </tr>
+</table>
+
+___
+
+
