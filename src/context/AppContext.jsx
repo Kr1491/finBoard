@@ -111,6 +111,7 @@ export function AppContext({ children }) {
       deleteTransaction,
       updateTransaction,
       converting,
+      addTransaction,
     }}>
       {converting && (
         <div style={{
